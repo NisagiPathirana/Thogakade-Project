@@ -3,8 +3,18 @@ package edu.icet.controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class DashBoardController {
+
+    Stage customerManagement = new Stage();
+    Stage itemManagement = new Stage();
+    Stage orderManagement = new Stage();
+    Stage orderDetailManagement = new Stage();
 
     @FXML
     private JFXButton btnCustomerManagement;
@@ -20,6 +30,11 @@ public class DashBoardController {
 
     @FXML
     void btnCustomerManagementOnAction(ActionEvent event) {
+        try {
+            customerManagement.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Customer.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -28,13 +43,14 @@ public class DashBoardController {
 
     }
 
+
     @FXML
-    void btnOrderDetailManagementOnAction(ActionEvent event) {
+    void btnOrderManagementOnAction(ActionEvent event) {
 
     }
 
     @FXML
-    void btnOrderManagementOnAction(ActionEvent event) {
+    void btnOrderDetailManagementOnAction(ActionEvent event) {
 
     }
 
