@@ -35,22 +35,39 @@ public class DashBoardController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
+        customerManagement.show();
     }
 
     @FXML
     void btnItemManagementOnAction(ActionEvent event) {
 
+        try {
+            itemManagement.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Item.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        itemManagement.show();
     }
-
 
     @FXML
     void btnOrderManagementOnAction(ActionEvent event) {
 
+        try {
+            orderManagement.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Order.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        orderManagement.show();
     }
 
     @FXML
     void btnOrderDetailManagementOnAction(ActionEvent event) {
+        try {
+            orderDetailManagement.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/OrderDetails.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        orderDetailManagement.show();
 
     }
 
